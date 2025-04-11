@@ -1,4 +1,9 @@
-# LaboratoryReport
+# Lab Report
+
+This lab report is jointly prepared by CUI Gege (23125624R), IP Chun Man Ben (23062929R), LAM Yat Long (23039591R), LIU Mingjiang (23133185R), YAN Xinhao (23125502R), and ZHANG Xuan (23125486R).
+
+
+## 
 
 Prepare a detailed lab report covering the following aspects:
 
