@@ -59,13 +59,15 @@ Please refer to the file "SetB-20210521.medium-urban.whampoa.ublox.f9p.pos" for 
 
 #### Effects of the parameter change on accuracy, processing speed and robustness
 
-I. Accuracy
+I. Accuracy. The shape of the trajectory in Set A is similar to the true trajectory while the shape of the trajectory in Set B is almost dissimilar to the true trajectory. It implies that Set A demonstrates a better accuracy than Set B.
 
-II. Processing Speed
+II. Processing Speed. There is no significant change in computation time in processing Set A and Set B.
 
-III. Robustness. In Set B, there is a large time gap from 06:33 to 06:50 that almost fails to process the current position of the user's receiver antenna, which is illustrated in the position plot. 
+III. Robustness. In Set B from 06:33 to 06:50, the position of the user's receiver antenna cannot be determined in most of the time as illustrated in the position plot for Set B. Nevertheless, the user's position can almost be obtained continuously throughout the entire journey in Set A when compared to Set B. It implies that Set B demonstrates a degraded robustness. 
 
-### 1.4 Set C: Parameters Tuned
+### 1.4 Set C
+
+#### Parameters Tuned
 
 | Parameters | Value |
 |-----------------|-----------------|
@@ -84,6 +86,14 @@ The position with time is shown in the below figure:
 ![position-c](https://github.com/user-attachments/assets/dbf89072-ea2e-4b65-9077-e702c247945c)
 
 Please refer to the file "SetC-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
+
+#### Effects of the parameter change on accuracy, processing speed and robustness
+
+I. Accuracy. Two shape tips can be observed in the bottom right corner of the trajectory in Set A, which can hardly be observed in Set C. For the remaining proportion of the trajectory plots, Set A and Set C tend to be similar. Therefore, the accuracy of the Set C tend to be higher than Set A.
+
+II. Processing Speed. There is no significant change in computation time in processing Set A and Set C.
+
+III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set C, which implies that both sets display similar robustness. 
 
 ### 1.5 Set D: Parameters Tuned
 
