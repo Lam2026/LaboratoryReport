@@ -52,6 +52,8 @@ The position with time is shown in the below figure:
 
 ![position-b](https://github.com/user-attachments/assets/7a441eb3-5cc7-48ae-b395-a1ce035cb930)
 
+Please refer to the file "SetB-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
+
 ### 1.4 Set C: Parameters Tuned
 
 | Parameters | Value |
