@@ -94,7 +94,7 @@ The position with time is shown in the below figure:
 
 Please refer to the file "SetD-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
-### 1.5 Set E: Parameters Tuned
+### 1.6 Set E: Parameters Tuned
 
 | Parameters | Value |
 |-----------------|-----------------|
@@ -113,9 +113,27 @@ The position with time is shown in the below figure:
 
 ![position-e](https://github.com/user-attachments/assets/fa4bbb73-8ebc-4226-bec2-a30fc9685ef2)
 
-
 Please refer to the file "SetE-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
+### 1.7 Set F: Parameters Tuned
+
+| Parameters | Value |
+|-----------------|-----------------|
+| Position Mode	| Kinematic |
+| Filter Setting	(Filter Type)| Forward |
+| Satellite Selection Criteria (SNR Mask)	| 5 dBHz |
+
+Note that the parameters used in Set F are the same as those in Set A except that the SNR Mask is 5 dBHz for Set F.
+
+The trajectory generated is shown in the below figure:
+
+![trajectory-f](https://github.com/user-attachments/assets/f2fe51a0-4d60-4801-8a68-02045cb6583a)
+
+The position with time is shown in the below figure:
+
+![position-f](https://github.com/user-attachments/assets/16740e02-97c3-445f-878e-c823d3bcd00a)
+
+Please refer to the file "SetF-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
 Explain how parameter changes affected:
 
