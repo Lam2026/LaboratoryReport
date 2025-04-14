@@ -2,7 +2,9 @@
 
 This lab report is jointly prepared by CUI Gege (23125624R), IP Chun Man Ben (23062929R), LAM Yat Long (23039591R), LIU Mingjiang (23133185R), YAN Xinhao (23125502R), and ZHANG Xuan (23125486R).
 
-In this lab report, the open-source RTKLIB GNSS library is used. The dataset used is "20210521.medium-urban.whampoa.ublox.f9p.obs" provided in the UrbanNav Dataset.
+In this lab report, the open-source RTKLIB GNSS library is used. The dataset used is "20210521.medium-urban.whampoa.ublox.f9p.obs" provided in the UrbanNav Dataset. The trajectory of this dataset is shown in the below figure:
+
+![UrbanNav-HK-Deep-Urban-1](https://github.com/user-attachments/assets/16f5c656-2b12-437b-ac82-0fb8d51c76dd)
 
 ## 1. Parameter Tuning and Effects
 
@@ -32,9 +34,10 @@ The position with time is shown in the below figure:
 
 ![position](https://github.com/user-attachments/assets/09c09477-2854-4f44-9f65-0d41fe84f750)
 
-Please refer to the file "SetA-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
+We consider Set A as the baseline to investigate how the changes in parameter affect accuracy, processing speed and robustness. Please refer to the file "SetA-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time for Set A.
 
-### 1.3 Set B: Parameters Tuned
+### 1.3 Set B
+#### Parameters Tuned
 
 | Parameters | Value |
 |-----------------|-----------------|
@@ -53,6 +56,14 @@ The position with time is shown in the below figure:
 ![position-b](https://github.com/user-attachments/assets/7a441eb3-5cc7-48ae-b395-a1ce035cb930)
 
 Please refer to the file "SetB-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
+
+#### Effects of the parameter change on accuracy, processing speed and robustness
+
+I. Accuracy
+
+II. Processing Speed
+
+III. Robustness. In Set B, there is a large time gap from 06:33 to 06:50 that almost fails to process the current position of the user's receiver antenna, which is illustrated in the position plot. 
 
 ### 1.4 Set C: Parameters Tuned
 
@@ -108,7 +119,6 @@ The trajectory generated is shown in the below figure:
 
 ![trajectory-e](https://github.com/user-attachments/assets/99c02ea0-31cc-4835-a2a2-7aaaa6e7c2d6)
 
-
 The position with time is shown in the below figure:
 
 ![position-e](https://github.com/user-attachments/assets/fa4bbb73-8ebc-4226-bec2-a30fc9685ef2)
@@ -134,12 +144,6 @@ The position with time is shown in the below figure:
 ![position-f](https://github.com/user-attachments/assets/16740e02-97c3-445f-878e-c823d3bcd00a)
 
 Please refer to the file "SetF-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
-
-Explain how parameter changes affected:
-
-Accuracy,
-Processing speed,
-Robustness
 
 ## 2. Strengths and Limitations
 
