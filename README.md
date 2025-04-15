@@ -260,7 +260,27 @@ Since it possesses combined filters, it cannot be easily designed to some scenar
 
 ## 3. Kaggle competition
 
-Submit your positioning result and beat your classmate at Kaggle competition
+### 3.1. Model Setting and Data Storage Format Adjustment
+The utilized model setting is illustrated in the figure below, where the positioning mode is "Kinematic" and the filter type is "Combined".
+
+![4ac43a4ef3719f204dda28996e4afe1](https://github.com/user-attachments/assets/080632d8-0c94-4dc3-a241-46c4f1fdceb3)
+
+We first updated the data storage format. Specifically, the default time format is changed to ww ssss GPST format, as illustrated in the figure below. After making this adjustment, we ran the model to save the results in the new format.
+
+![c2c1589f8b2a3749738796ea51b41e6](https://github.com/user-attachments/assets/8b46c84c-4712-4a22-bd28-2ef7ec075d7b)
+
+### 3.2. Data Conversion
+The original format and contents of the directly saved data are displayed in the figure below. This data was then exported and saved as a .txt file.
+
+![image](https://github.com/user-attachments/assets/78600f91-5529-4e0a-a037-dda6f938bd27)
+
+To ensure compatibility, we developed a Python script to convert the .txt file into a .csv format file. Both the script used for the conversion and the resulting .csv file have been saved in the Kaggle_group3 folder, which has been uploaded to this project.
+
+### 3.3. Result Submission
+The positioning results in .csv format have been submitted to the Kaggle competition under the team name "Group 3." The submission details are as follows with a public score of 1.52380.
+
+![image](https://github.com/user-attachments/assets/83b88818-5375-4b9f-a26c-5d11735f0d95)
+
 
 ## 4. Suggestions for Improvement
 
