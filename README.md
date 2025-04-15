@@ -183,11 +183,80 @@ II. Processing Speed. There is no significant change in computation time in proc
 
 III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set F. However, shape chances can hardly be observed in E-W plot and N-S plot for Set F while shape changes can be observed between 06:51 and 06:52 in Set A. However, shape changes in u-D plot can be observed in both Set A and Set F. Therefore, Set F has a slightly better robustness than Set A. 
 
+
+
 ## 2. Strengths and Limitations
 
 Strengths: Flexibility, robustness, ease of use.
 
 Limitations: Computational efficiency, lack of specific features.
+
+### 2.1. Static Position with Forward Filter
+
+#### Strengths
+##### Flexibility: 
+Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+##### Robustness:
+Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+##### Ease of Use:
+Straightforward implementation that requires minimal tuning and parameterization.
+
+#### Limitations
+##### Computational Efficiency:
+While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+##### Lack of Specific Features:
+Does not incorporate advanced features tailored to specialized dynamic applications.
+
+### 2.2. RTK with Forward Filter
+
+#### Strengths
+##### Flexibility: 
+Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+##### Robustness:
+Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+##### Ease of Use:
+Straightforward implementation that requires minimal tuning and parameterization.
+
+#### Limitations
+##### Computational Efficiency:
+While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+##### Lack of Specific Features:
+Does not incorporate advanced features tailored to specialized dynamic applications.
+
+
+### 2.3. RTK with Backward Filter
+
+#### Strengths
+##### Flexibility: 
+Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+##### Robustness:
+Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+##### Ease of Use:
+Straightforward implementation that requires minimal tuning and parameterization.
+
+#### Limitations
+##### Computational Efficiency:
+While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+##### Lack of Specific Features:
+Does not incorporate advanced features tailored to specialized dynamic applications.
+
+### 2.4. RTK with Combined Filter
+
+#### Strengths
+##### Flexibility: 
+Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+##### Robustness:
+Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+##### Ease of Use:
+Straightforward implementation that requires minimal tuning and parameterization.
+
+#### Limitations
+##### Computational Efficiency:
+While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+##### Lack of Specific Features:
+Does not incorporate advanced features tailored to specialized dynamic applications.
+
+
 
 ## 3. Kaggle competition
 
