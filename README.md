@@ -195,15 +195,15 @@ Limitations: Computational efficiency, lack of specific features.
 
 #### Strengths
 ##### Flexibility: 
-Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+The classical static positioning methdo can be easily applied to various scenarios.
 ##### Robustness:
-Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+It just provides a rough location information, so its robustness is very low.
 ##### Ease of Use:
-Straightforward implementation that requires minimal tuning and parameterization.
+It can be used in a straightforward implementation and it only requires minor tuning and parameterization.
 
 #### Limitations
 ##### Computational Efficiency:
-While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+It is sufficient for some simple cases, but it may become less efficient with increased data complexity.
 ##### Lack of Specific Features:
 Does not incorporate advanced features tailored to specialized dynamic applications.
 
@@ -211,50 +211,50 @@ Does not incorporate advanced features tailored to specialized dynamic applicati
 
 #### Strengths
 ##### Flexibility: 
-Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+The RTK with forward filter is adaptable to dynamic contexts, and thus it is suitable for some real-time applications.
 ##### Robustness:
-Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+It can provide accurate filtering performance under varying conditions, particularly in environments with numerous signal.
 ##### Ease of Use:
-Straightforward implementation that requires minimal tuning and parameterization.
+It has a clear framework that is relatively easy to implement and integrate into real-time systems.
 
 #### Limitations
 ##### Computational Efficiency:
-While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+The real-time processing requirement may require great computational resources, which may be challenging for computation resource-constrained systems.
 ##### Lack of Specific Features:
-Does not incorporate advanced features tailored to specialized dynamic applications.
+It may not include specific enhancements for specialized tasks beyond standard RTK applications.
 
 
 ### 2.3. RTK with Backward Filter
 
 #### Strengths
 ##### Flexibility: 
-Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+The RTK with backward filtering process can increase the adaptability by processing data in reverse, thus providing more accurate information.
 ##### Robustness:
-Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+It enhances the data integrity and accuracy by re-visiting the signals, thus reducing the impact of errors.
 ##### Ease of Use:
-Straightforward implementation that requires minimal tuning and parameterization.
+Although it involves an extra processing step, the backward filter can also be easily applied.
 
 #### Limitations
 ##### Computational Efficiency:
-While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+The extra backward processing step will increase the computational load, and it processes more data than forward filter. Therefore, it consumes more computational resources.
 ##### Lack of Specific Features:
-Does not incorporate advanced features tailored to specialized dynamic applications.
+Although it can improve the accuracy, it still falls short in addressing specific requirements, especially for those require real-time performance.
 
 ### 2.4. RTK with Combined Filter
 
 #### Strengths
 ##### Flexibility: 
-Can be readily applied in static environments. It is very simple to deploy it in various scenarios.
+Obviously, RTK with combined filter can gather both the advantages of both forward and backward filtering. Hence, it is the most flexible one for a wide range of applications.
 ##### Robustness:
-Provides a reliable and consistent filtering approach that can handle moderate noise levels.
+By using dual filtering techniques, it provides enhanced error mitigation and improved overall reliability.
 ##### Ease of Use:
-Straightforward implementation that requires minimal tuning and parameterization.
+Alghough it is more complex in setup, the combined approach can achieve a balance between accuracy and performance, with clear guidelines for integration.
 
 #### Limitations
 ##### Computational Efficiency:
-While sufficient for simpler scenarios, the approach may become less efficient with increased data complexity.
+The combined processing inherently requires greater computational power, which will present great challenges in resource-constrained environments.
 ##### Lack of Specific Features:
-Does not incorporate advanced features tailored to specialized dynamic applications.
+Since it possesses combined filters, it cannot be easily designed to some scenarios, because it requires both the conditions with respect to forward and backward structures.
 
 
 
