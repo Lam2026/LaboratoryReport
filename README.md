@@ -279,12 +279,15 @@ The positioning results in .csv format have been submitted to the Kaggle competi
 
 ## 4 Comparison with Other Libraries (Optional)
 
-If time permits, test another GNSS library using the same dataset and compare based on:
+In this section, we test another open-source GNSS library [GICI-LIB](https://github.com/chichengcn/gici-open). GICI-LIB is a GNSS/INS/Camera integration library that achieves high accuracy and robustness through multi-sensor fusion. We evaluate three typical GNSS-only algorithms (i.e., SPP, RTD, RTK) implemented in GICI-LIB using the UrbanNav dataset and also compare the best-performing algorithm, RTK, between GICI-LIB and RTKLIB.
 
-Accuracy
-Ease of use
-Flexibility
-Computational efficiency
+### 4.1. Configuration
+GICI-LIB uses *.yaml* file to configure the workflow, the used configuration file is attached in [*gici/post_estimation_rinex_urban.yaml*](./gici/post_estimation_rinex_urban.yaml). Notably, we use all provided navigation data files as the input, and use three estimators to estimate the positions in parallel.
+
+### 4.2. Results
+
+
+### 4.3. GICI-LIB vs. RTKLIB
 
 ## 5. Suggestions for Improvement
 ### 5.1 recommendations for improving RTKLIB Library

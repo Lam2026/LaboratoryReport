@@ -1,0 +1,275 @@
+# GICI offline post RTK estimation for UrbanNav dataset.
+stream:
+  streamers:
+  - streamer:
+      tag: str_gnss_rov_file
+      type: post-file
+      path: ../urban_nav/20210521.medium-urban.whampoa.ublox.f9p.obs  # converted by rtklib. Sample data is updated to dataset, namely *-rinex-imutext.
+      format:
+        type: gnss-rinex
+      latency: 0.0
+  - streamer:
+      tag: str_gnss_ref_file
+      type: post-file
+      path: ../urban_nav/hksc141g.21o
+      format:
+        type: gnss-rinex
+  - streamer:
+      tag: str_gnss_eph_file_1
+      type: post-file
+      path: ../urban_nav/hksc141g.21b
+      burst_load: true  # burst load will load all data at once in the beginning
+      format:
+        type: gnss-rinex
+  - streamer:
+      tag: str_gnss_eph_file_2
+      type: post-file
+      path: ../urban_nav/hksc141g.21g
+      burst_load: true  # burst load will load all data at once in the beginning
+      format:
+        type: gnss-rinex
+  - streamer:
+      tag: str_gnss_eph_file_3
+      type: post-file
+      path: ../urban_nav/hksc141g.21l
+      burst_load: true  # burst load will load all data at once in the beginning
+      format:
+        type: gnss-rinex
+  - streamer:
+      tag: str_gnss_eph_file_4
+      type: post-file
+      path: ../urban_nav/hksc141g.21m
+      burst_load: true  # burst load will load all data at once in the beginning
+      format:
+        type: gnss-rinex
+  - streamer:
+      tag: str_gnss_eph_file_5
+      type: post-file
+      path: ../urban_nav/hksc141g.21n
+      burst_load: true  # burst load will load all data at once in the beginning
+      format:
+        type: gnss-rinex
+  - streamer:
+      tag: str_rtk_solution_file
+      input_tags: [fmt_rtk_solution_file]
+      type: file
+      path: ../output/rtk_urban_medium_solution.txt
+      enable_time_tag: false
+  - streamer:
+      tag: str_spp_solution_file
+      input_tags: [fmt_spp_solution_file]
+      type: file
+      path: ../output/spp_urban_medium_solution.txt
+      enable_time_tag: false
+  - streamer:
+      tag: str_sdgnss_solution_file
+      input_tags: [fmt_sdgnss_solution_file]
+      type: file
+      path: ../output/sdgnss_urban_medium_solution.txt
+      enable_time_tag: false
+  - streamer:
+      tag: str_dgnss_solution_file
+      input_tags: [fmt_dgnss_solution_file]
+      type: file
+      path: ../output/dgnss_urban_medium_solution.txt
+      enable_time_tag: false
+
+  formators:
+  - formator:
+      io: output
+      tag: fmt_rtk_solution_file
+      type: nmea 
+      use_esa: true
+      use_esd: true
+      talker_id: GP
+  - formator:
+      io: output
+      tag: fmt_spp_solution_file
+      type: nmea 
+      use_esa: true
+      use_esd: true
+      talker_id: GP
+  - formator:
+      io: output
+      tag: fmt_sdgnss_solution_file
+      type: nmea 
+      use_esa: true
+      use_esd: true
+      talker_id: GP
+  - formator:
+      io: output
+      tag: fmt_dgnss_solution_file
+      type: nmea 
+      use_esa: true
+      use_esd: true
+      talker_id: GP
+
+  replay:
+    enable: true
+    start_offset: 0.0
+
+estimate:
+- estimator:
+    tag: est_rtk
+    type: rtk
+    input_tags: [str_gnss_rov_file, str_gnss_ref_file, str_gnss_eph_file_1, str_gnss_eph_file_2, str_gnss_eph_file_3, str_gnss_eph_file_4, str_gnss_eph_file_5]
+    str_gnss_rov_file_roles: [rover]
+    str_gnss_ref_file_roles: [reference]
+    str_gnss_eph_file_1_roles: [ephemeris]
+    str_gnss_eph_file_2_roles: [ephemeris]
+    str_gnss_eph_file_3_roles: [ephemeris]
+    str_gnss_eph_file_4_roles: [ephemeris]
+    str_gnss_eph_file_5_roles: [ephemeris]
+    output_tags: [fmt_rtk_solution_file]
+    output_align_tag: str_gnss_rov_file
+    compute_covariance: true
+    rtk_options:
+      max_window_length: 3
+      use_ambiguity_resolution: true
+      estimate_velocity: true
+    gnss_estimator_base_options:
+      gnss_common:
+        min_elevation: 15.0        
+        mw_slip_thres: 0.5
+        gf_slip_thres: 0.05
+        gf_sd_slip_thres: 0.05
+      use_outlier_rejection: true
+      max_pesudorange_error: 4.0        
+      max_phaserange_error: 0.06         
+      max_doppler_error: 0.5
+    estimator_base_options:
+      max_iteration: 10
+      num_threads: 2
+      max_solver_time: 0.05
+      verbose_output: false
+      solver_type: dense_schur
+      trust_region_strategy_type: dogleg
+    ambiguity_resolution_options:
+      system_exclude: [R]
+      min_percentage_fixation_uwl: 1.0
+      min_percentage_fixation_wl: 0.9
+      min_percentage_fixation_nl: 0.9
+      ratio: 2.0
+- estimator:
+    tag: est_spp
+    type: spp
+    input_tags: [str_gnss_rov_file, str_gnss_ref_file, str_gnss_eph_file_1, str_gnss_eph_file_2, str_gnss_eph_file_3, str_gnss_eph_file_4, str_gnss_eph_file_5]
+    str_gnss_rov_file_roles: [rover]
+    str_gnss_ref_file_roles: [reference]
+    str_gnss_eph_file_1_roles: [ephemeris]
+    str_gnss_eph_file_2_roles: [ephemeris]
+    str_gnss_eph_file_3_roles: [ephemeris]
+    str_gnss_eph_file_4_roles: [ephemeris]
+    str_gnss_eph_file_5_roles: [ephemeris]
+    output_tags: [fmt_spp_solution_file]
+    output_align_tag: str_gnss_rov_file
+    compute_covariance: false
+    spp_options:
+      estimate_velocity: true
+    gnss_estimator_base_options:
+      gnss_common:
+        min_elevation: 15.0        
+        mw_slip_thres: 0.5
+        gf_slip_thres: 0.05
+        gf_sd_slip_thres: 0.05
+      use_outlier_rejection: true
+      max_pesudorange_error: 4.0        
+      max_phaserange_error: 0.06         
+      max_doppler_error: 0.5
+    estimator_base_options:
+      max_iteration: 10
+      num_threads: 2
+      max_solver_time: 0.05
+      verbose_output: false
+      solver_type: dense_schur
+      trust_region_strategy_type: dogleg
+    ambiguity_resolution_options:
+      system_exclude: [R]
+      min_percentage_fixation_uwl: 1.0
+      min_percentage_fixation_wl: 0.9
+      min_percentage_fixation_nl: 0.9
+      ratio: 2.0
+- estimator:
+    tag: est_sdgnss
+    type: sdgnss
+    input_tags: [str_gnss_rov_file, str_gnss_ref_file, str_gnss_eph_file_1, str_gnss_eph_file_2, str_gnss_eph_file_3, str_gnss_eph_file_4, str_gnss_eph_file_5]
+    str_gnss_rov_file_roles: [rover]
+    str_gnss_ref_file_roles: [reference]
+    str_gnss_eph_file_1_roles: [ephemeris]
+    str_gnss_eph_file_2_roles: [ephemeris]
+    str_gnss_eph_file_3_roles: [ephemeris]
+    str_gnss_eph_file_4_roles: [ephemeris]
+    str_gnss_eph_file_5_roles: [ephemeris]
+    output_tags: [fmt_sdgnss_solution_file]
+    output_align_tag: str_gnss_rov_file
+    compute_covariance: false
+    sdgnss_options:
+      estimate_velocity: true
+    gnss_estimator_base_options:
+      gnss_common:
+        min_elevation: 15.0        
+        mw_slip_thres: 0.5
+        gf_slip_thres: 0.05
+        gf_sd_slip_thres: 0.05
+      use_outlier_rejection: true
+      max_pesudorange_error: 4.0        
+      max_phaserange_error: 0.06         
+      max_doppler_error: 0.5
+    estimator_base_options:
+      max_iteration: 10
+      num_threads: 2
+      max_solver_time: 0.05
+      verbose_output: false
+      solver_type: dense_schur
+      trust_region_strategy_type: dogleg
+    ambiguity_resolution_options:
+      system_exclude: [R]
+      min_percentage_fixation_uwl: 1.0
+      min_percentage_fixation_wl: 0.9
+      min_percentage_fixation_nl: 0.9
+      ratio: 2.0
+- estimator:
+    tag: est_dgnss
+    type: dgnss
+    input_tags: [str_gnss_rov_file, str_gnss_ref_file, str_gnss_eph_file_1, str_gnss_eph_file_2, str_gnss_eph_file_3, str_gnss_eph_file_4, str_gnss_eph_file_5]
+    str_gnss_rov_file_roles: [rover]
+    str_gnss_ref_file_roles: [reference]
+    str_gnss_eph_file_1_roles: [ephemeris]
+    str_gnss_eph_file_2_roles: [ephemeris]
+    str_gnss_eph_file_3_roles: [ephemeris]
+    str_gnss_eph_file_4_roles: [ephemeris]
+    str_gnss_eph_file_5_roles: [ephemeris]
+    output_tags: [fmt_dgnss_solution_file]
+    output_align_tag: str_gnss_rov_file
+    compute_covariance: false
+    dgnss_options:
+      estimate_velocity: true
+    gnss_estimator_base_options:
+      gnss_common:
+        min_elevation: 15.0        
+        mw_slip_thres: 0.5
+        gf_slip_thres: 0.05
+        gf_sd_slip_thres: 0.05
+      use_outlier_rejection: true
+      max_pesudorange_error: 4.0        
+      max_phaserange_error: 0.06         
+      max_doppler_error: 0.5
+    estimator_base_options:
+      max_iteration: 10
+      num_threads: 2
+      max_solver_time: 0.05
+      verbose_output: false
+      solver_type: dense_schur
+      trust_region_strategy_type: dogleg
+    ambiguity_resolution_options:
+      system_exclude: [R]
+      min_percentage_fixation_uwl: 1.0
+      min_percentage_fixation_wl: 0.9
+      min_percentage_fixation_nl: 0.9
+      ratio: 2.0
+
+logging:
+  enable: true
+  min_log_level: 0
+  log_to_stderr: true
+  file_directory: ../log
