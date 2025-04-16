@@ -63,7 +63,7 @@ I. Accuracy. The shape of the trajectory in Set A is similar to the true traject
 
 II. Processing Speed. There is no significant change in computation time in processing Set A and Set B.
 
-III. Robustness. In Set B from 06:33 to 06:50, the position of the user's receiver antenna cannot be determined in most of the time as illustrated in the position plot for Set B. Nevertheless, the user's position can almost be obtained continuously throughout the entire journey in Set A when compared to Set B. It implies that Set B demonstrates a degraded robustness. 
+III. Robustness. In Set B from 06:34 to 06:35 abd from 06:37 to 06:41, the position of the user's receiver antenna cannot be determined in most of the time as illustrated in the position plot for Set B. Nevertheless, the user's position can almost be obtained continuously throughout the entire journey in Set A when compared to Set B. It implies that Set B demonstrates a degraded robustness. 
 
 ### 1.4 Set C
 
@@ -89,7 +89,7 @@ Please refer to the file "SetC-20210521.medium-urban.whampoa.ublox.f9p.pos" for 
 
 #### Effects of the parameter change on accuracy, processing speed and robustness
 
-I. Accuracy. Two shape tips can be observed in the bottom right corner of the trajectory in Set A corresponding to the presence of tall building while the accuracy of Set C near the tall building (located near the bottom right corner) performs better than Set A. For the remaining proportion of the trajectory plots, both Set A and Set C has a relative high accuracy in open street environment and a small degraded accuracy for the environments with medium-height buildings and narrow streets. However, the accuracy of Set C in the wide street is worse than Set A.
+I. Accuracy. For the trajectory in the straight-line wide street section, the trajectory in Set C is more close to a straight-line trajectory than Set A, implying that Set C is more accurate than Set A in this section. For the other sections, no observable accuracy differences between Set A and Set C.
 
 II. Processing Speed. There is no significant change in computation time in processing Set A and Set C.
 
