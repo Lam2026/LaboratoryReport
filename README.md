@@ -28,11 +28,11 @@ In this lab report, the open-source RTKLIB GNSS library is used. The dataset use
 
 The trajectory generated is shown in the below figure:
 
-![Trajectory](https://github.com/user-attachments/assets/850f8df7-0fff-44f3-92ad-cda5ee04e87e)
+![SetA-trajectory](https://github.com/user-attachments/assets/64629d42-5518-41bd-aad3-f5304f66d4f8)
 
 The position with time is shown in the below figure:
 
-![position](https://github.com/user-attachments/assets/09c09477-2854-4f44-9f65-0d41fe84f750)
+![SetA-position](https://github.com/user-attachments/assets/5fd7fc7b-1558-4ad7-abbe-cee41a517dbe)
 
 We consider Set A as the baseline to investigate how the changes in parameter affect accuracy, processing speed and robustness. Please refer to the file "SetA-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time for Set A.
 
@@ -49,11 +49,11 @@ Note that the parameters used in Set B are the same as those in Set A except tha
 
 The trajectory generated is shown in the below figure:
 
-![trajectory-b](https://github.com/user-attachments/assets/5948cf0d-7697-4f18-95e1-7f58acba76b1)
+![SetB-trajectory](https://github.com/user-attachments/assets/e3838578-cdd8-49af-b270-6f570affc0fa)
 
 The position with time is shown in the below figure:
 
-![position-b](https://github.com/user-attachments/assets/7a441eb3-5cc7-48ae-b395-a1ce035cb930)
+![SetB-position](https://github.com/user-attachments/assets/6edbc550-44d3-4e5d-b957-23fc49ec43cf)
 
 Please refer to the file "SetB-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
@@ -79,11 +79,11 @@ Note that the parameters used in Set C are the same as those in Set A except tha
 
 The trajectory generated is shown in the below figure:
 
-![trajectory-c](https://github.com/user-attachments/assets/f878b14c-f5f3-47e2-9069-c3fd681f237b)
+![SetC-trajectory](https://github.com/user-attachments/assets/daac7c77-d4b9-49b1-8261-0ceaa3453850)
 
 The position with time is shown in the below figure:
 
-![position-c](https://github.com/user-attachments/assets/dbf89072-ea2e-4b65-9077-e702c247945c)
+![SetC-position](https://github.com/user-attachments/assets/d585469a-ae19-4f7e-a818-821c28623b01)
 
 Please refer to the file "SetC-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
@@ -109,11 +109,11 @@ Note that the parameters used in Set D are the same as those in Set A except tha
 
 The trajectory generated is shown in the below figure:
 
-![trajectory-d](https://github.com/user-attachments/assets/0ae429e8-9985-4451-ad60-5f8870d0f600)
+![SetD-trajectory](https://github.com/user-attachments/assets/03b817fa-c17c-4303-bffa-323bbc76cc2a)
 
 The position with time is shown in the below figure:
 
-![position-d](https://github.com/user-attachments/assets/d19e8518-9919-40a5-aec4-a0ed81ccaf59)
+![SetD-position](https://github.com/user-attachments/assets/ad7da523-0ce5-4ae2-a256-eaf0188451e7)
 
 Please refer to the file "SetD-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
@@ -139,11 +139,11 @@ Note that the parameters used in Set E are the same as those in Set A except tha
 
 The trajectory generated is shown in the below figure:
 
-![trajectory-e](https://github.com/user-attachments/assets/99c02ea0-31cc-4835-a2a2-7aaaa6e7c2d6)
+![SetE-trajectory](https://github.com/user-attachments/assets/a1eb1c4e-93b8-4031-a5d9-34a4216f02fa)
 
 The position with time is shown in the below figure:
 
-![position-e](https://github.com/user-attachments/assets/fa4bbb73-8ebc-4226-bec2-a30fc9685ef2)
+![SetE-position](https://github.com/user-attachments/assets/0c764bc6-75ab-439e-8de2-17658c396c61)
 
 Please refer to the file "SetE-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
@@ -167,11 +167,11 @@ Note that the parameters used in Set F are the same as those in Set A except tha
 
 The trajectory generated is shown in the below figure:
 
-![trajectory-f](https://github.com/user-attachments/assets/f2fe51a0-4d60-4801-8a68-02045cb6583a)
+![SetF-trajectory](https://github.com/user-attachments/assets/19be5a62-599c-4916-946b-0a1b16a3989a)
 
 The position with time is shown in the below figure:
 
-![position-f](https://github.com/user-attachments/assets/16740e02-97c3-445f-878e-c823d3bcd00a)
+![SetF-position](https://github.com/user-attachments/assets/6e8f3888-c9d5-40e2-8f99-0fae424d4207)
 
 Please refer to the file "SetF-20210521.medium-urban.whampoa.ublox.f9p.pos" for the detailed locations with time.
 
@@ -179,7 +179,7 @@ Please refer to the file "SetF-20210521.medium-urban.whampoa.ublox.f9p.pos" for 
 
 I. Accuracy. The shapes of the trajectories of both Set A and Set F are similar, and both exhibit sinigificant error with tall building, small error with medium-height building or narrow streets, and excellent accuracy in wide street. It implies that the accuracy of the both sets are similar.
 
-II. Processing Speed. There is no significant change in computation time in processing Set A and Set F.
+II. Processing Speed. The processing speed is slightly faster for Set F since the signal with SNR lower than 5dBHz will be ignored, so the amount of signals that need to be processed in Set F is smaller, which eventually gives a faster computation speed.
 
 III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set F. However, shape chances can hardly be observed in E-W plot and N-S plot for Set F while shape changes can be observed between 06:51 and 06:52 in Set A. However, shape changes in u-D plot can be observed in both Set A and Set F. Therefore, Set F has a slightly better robustness than Set A. 
 
