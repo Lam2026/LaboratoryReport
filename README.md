@@ -303,12 +303,13 @@ Add support for fusing GNSS data with Inertial Measurement Units (IMUs) for bett
 
 ### 5.2 recommendations for improving the parameter tuning process
 
-Provide recommendations to enhance:
-
-The selected GNSS library,
-The parameter tuning process
-
-Provide recommendations to enhance:
-
-The selected GNSS library,
-The parameter tuning process
+1) RTKLIB Parameter Tuning Guide:
+Key parameters such as elevation mask, satellite weighting, ambiguity resolution, and ionosphere models can be adjusted in rtk.conf (real-time) or ppk.ini (post-processing). Edit these files directly or via RTKNAVI/RTKPOST GUI for optimization.
+2) Dynamic Parameter Adjustment:
+Implement adaptive mechanisms to adjust parameters during runtime, such as: adjusting elevation mask based on satellite geometry, and dynamically tuning process noise based on user motion or environmental conditions.
+3) Predefined Parameter Sets:
+Provide default parameter sets for common use cases, such as: static surveying, real-time UAV navigation, and long baseline RTK.
+4) Benchmarking Dataset:
+Provide sample datasets for different scenarios (e.g., open sky, urban canyon) so users can test parameter configurations.
+5) Automated Testing Framework:
+Develop an automated testing suite to validate parameter changes and their impact on positioning accuracy.
