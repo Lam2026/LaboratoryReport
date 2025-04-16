@@ -187,10 +187,6 @@ III. Robustness. The user's position can almost be obtained continuously through
 
 ## 2. Strengths and Limitations
 
-Strengths: Flexibility, robustness, ease of use.
-
-Limitations: Computational efficiency, lack of specific features.
-
 ### 2.1. Static Position with Forward Filter
 
 #### Strengths
