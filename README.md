@@ -294,7 +294,7 @@ replace or complement the Extended Kalman Filter (EKF) with advanced filters, su
 2) Improve Error Models:
 one way to improve error is to add support for more accurate atmospheric models, such as roposphere (GPT3 or VMF3 models) and ionosphere: (Real-time Global Ionosphere Maps (GIM) or regional models). Another way is enhance multipath mitigation by introducing stochastic modeling of multipath effects.
 3) Enhance Ambiguity Resolution:
-useing advanced ambiguity fixing techniques like Partial Ambiguity Resolution (PAR) or Integer Bootstrapping;
+using advanced ambiguity fixing techniques like Partial Ambiguity Resolution (PAR) or Integer Bootstrapping;
 implementing a more robust method for isolating and rejecting outliers during the ambiguity fixing step.
 4) Extend Multi-GNSS and Multi-Frequency Support:
 RTKLIB supports multiple GNSS constellations (GPS, GLONASS, BeiDou, Galileo), but its multi-GNSS and multi-frequency processing can be improved.
