@@ -292,7 +292,7 @@ RTKLIB uses basic algorithms for positioning and error correction. Upgrading the
 1) Upgrade Filtering Algorithms:
 replace or complement the Extended Kalman Filter (EKF) with advanced filters, such as Unscented Kalman Filter (UKF) which is better for non-linear systems, and Particle Filter (PF) which is useful for challenging environments (e.g., urban canyons). Another improvement for filtering algorithm is to implement factor graph optimization for GNSS positioning (e.g., GTSAM-based optimization).
 2) Improve Error Models:
-one way to improve error is to add support for more accurate atmospheric models, such as roposphere (GPT3 or VMF3 models) and ionosphere: (Real-time Global Ionosphere Maps (GIM) or regional models). Another way is enhance multipath mitigation by introducing stochastic modeling of multipath effects.
+one way to improve error is to add support for more accurate atmospheric models, such as troposphere (GPT3 or VMF3 models) and ionosphere: (Real-time Global Ionosphere Maps (GIM) or regional models). Another way is enhancing multipath mitigation by introducing stochastic modeling of multipath effects.
 3) Enhance Ambiguity Resolution:
 using advanced ambiguity fixing techniques like Partial Ambiguity Resolution (PAR) or Integer Bootstrapping;
 implementing a more robust method for isolating and rejecting outliers during the ambiguity fixing step.
