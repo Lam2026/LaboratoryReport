@@ -281,8 +281,16 @@ The positioning results in .csv format have been submitted to the Kaggle competi
 
 ![image](https://github.com/user-attachments/assets/83b88818-5375-4b9f-a26c-5d11735f0d95)
 
+## 4 Comparison with Other Libraries (Optional)
 
-## 4. Suggestions for Improvement
+If time permits, test another GNSS library using the same dataset and compare based on:
+
+Accuracy
+Ease of use
+Flexibility
+Computational efficiency
+
+## 5. Suggestions for Improvement
 
 Provide recommendations to enhance:
 
