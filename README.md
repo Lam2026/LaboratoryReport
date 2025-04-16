@@ -119,11 +119,11 @@ Please refer to the file "SetD-20210521.medium-urban.whampoa.ublox.f9p.pos" for 
 
 #### Effects of the parameter change on accuracy, processing speed and robustness
 
-I. Accuracy. Two shape tips can be observed in the bottom right corner of the trajectory in Set A corresponding to the presence of tall building while the accuracy of Set D near the tall building (located near the bottom right corner) performs better than Set A. For the remaining proportion of the trajectory plots, both Set A and Set D has a relative high accuracy in open street environment and a small degraded accuracy for the environments with medium-height buildings and narrow streets. However, the accuracy of Set D in the wide street is worse than Set A.
+I. Accuracy. For the trajectory in the straight-line wide street section, the trajectory in Set D is more close to a straight-line trajectory than Set A, implying that Set D is more accurate than Set A in this section. For the other sections, no observable accuracy differences between Set A and Set D.
 
 II. Processing Speed. There is no significant change in computation time in processing Set A and Set D.
 
-III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set D. However, shape chances can hardly be observed in E-W plot and N-S plot for Set D while shape changes can be observed between 06:51 and 06:52 in Set A. However, shape changes in u-D plot can be observed in both Set A and Set D. Therefore, Set D has a slightly better robustness than Set A. 
+III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set D, which implies that both sets display similar robustness. 
 
 ### 1.6 Set E
 
@@ -149,11 +149,11 @@ Please refer to the file "SetE-20210521.medium-urban.whampoa.ublox.f9p.pos" for 
 
 #### Effects of the parameter change on accuracy, processing speed and robustness
 
-I. Accuracy. Two shape tips can be observed in the bottom right corner of the trajectory in Set A corresponding to the presence of tall building while the accuracy of Set E near the tall building (located near the bottom right corner) performs better than Set A. For the remaining proportion of the trajectory plots, both Set A and Set E has a relative high accuracy in open street environment and a small degraded accuracy for the environments with medium-height buildings and narrow streets. However, the accuracy of Set E in the wide street is worse than Set A.
+I. Accuracy. For the trajectory in the straight-line wide street section, the trajectory in Set E is more close to a straight-line-like trajectory than Set A, implying that Set E is more accurate than Set A in this section. For the other sections, no observable accuracy differences between Set A and Set E.
 
 II. Processing Speed. There is no significant change in computation time in processing Set A and Set E.
 
-III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set E. However, shape chances can hardly be observed in E-W plot and N-S plot for Set E while shape changes can be observed between 06:51 and 06:52 in Set A. However, shape changes in u-D plot can be observed in both Set A and Set E. Therefore, Set E has a slightly better robustness than Set A. 
+III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set E, impling that Set A and Set E display similar robustness.
 
 ### 1.7 Set F: Parameters Tuned
 
@@ -177,11 +177,11 @@ Please refer to the file "SetF-20210521.medium-urban.whampoa.ublox.f9p.pos" for 
 
 #### Effects of the parameter change on accuracy, processing speed and robustness
 
-I. Accuracy. The shapes of the trajectories of both Set A and Set F are similar, and both exhibit sinigificant error with tall building, small error with medium-height building or narrow streets, and excellent accuracy in wide street. It implies that the accuracy of the both sets are similar.
+I. Accuracy. The shapes of the trajectories of both Set A and Set F are similar, implying similar accuracy between Set A and Set F.
 
 II. Processing Speed. The processing speed is slightly faster for Set F since the signal with SNR lower than 5dBHz will be ignored, so the amount of signals that need to be processed in Set F is smaller, which eventually gives a faster computation speed.
 
-III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set F. However, shape chances can hardly be observed in E-W plot and N-S plot for Set F while shape changes can be observed between 06:51 and 06:52 in Set A. However, shape changes in u-D plot can be observed in both Set A and Set F. Therefore, Set F has a slightly better robustness than Set A. 
+III. Robustness. The user's position can almost be obtained continuously throughout the entire journey in both Set A and Set F, implying similar robustness.
 
 
 
