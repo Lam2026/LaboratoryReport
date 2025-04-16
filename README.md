@@ -290,26 +290,26 @@ Computational efficiency
 ### 5.1 recommendations for improving RTKLIB Library
 RTKLIB uses basic algorithms for positioning and error correction. Upgrading these algorithms can enhance its precision and robustness.
 1) Upgrade Filtering Algorithms:
-Replace or complement the Extended Kalman Filter (EKF) with advanced filters like: Unscented Kalman Filter (UKF) which is better for non-linear systems, and Particle Filter (PF) which is useful for challenging environments (e.g., urban canyons). Another improvement for filtering algorithm is to implement factor graph optimization for GNSS positioning (e.g., GTSAM-based optimization).
+replace or complement the Extended Kalman Filter (EKF) with advanced filters, such as Unscented Kalman Filter (UKF) which is better for non-linear systems, and Particle Filter (PF) which is useful for challenging environments (e.g., urban canyons). Another improvement for filtering algorithm is to implement factor graph optimization for GNSS positioning (e.g., GTSAM-based optimization).
 2) Improve Error Models:
-One way to improve error is to add support for more accurate atmospheric models, such as roposphere (GPT3 or VMF3 models) and ionosphere: (Real-time Global Ionosphere Maps (GIM) or regional models). another way is enhance multipath mitigation by introducing stochastic modeling of multipath effects.
+one way to improve error is to add support for more accurate atmospheric models, such as roposphere (GPT3 or VMF3 models) and ionosphere: (Real-time Global Ionosphere Maps (GIM) or regional models). Another way is enhance multipath mitigation by introducing stochastic modeling of multipath effects.
 3) Enhance Ambiguity Resolution:
-Use advanced ambiguity fixing techniques like Partial Ambiguity Resolution (PAR) or Integer Bootstrapping.
-Implement a more robust method for isolating and rejecting outliers during the ambiguity fixing step.
+useing advanced ambiguity fixing techniques like Partial Ambiguity Resolution (PAR) or Integer Bootstrapping;
+implementing a more robust method for isolating and rejecting outliers during the ambiguity fixing step.
 4) Extend Multi-GNSS and Multi-Frequency Support:
 RTKLIB supports multiple GNSS constellations (GPS, GLONASS, BeiDou, Galileo), but its multi-GNSS and multi-frequency processing can be improved.
 6) Integrate GNSS-IMU Fusion:
-Add support for fusing GNSS data with Inertial Measurement Units (IMUs) for better performance in high-dynamic or GNSS-challenged environments.  
+add support for fusing GNSS data with Inertial Measurement Units (IMUs) for better performance in high-dynamic or GNSS-challenged environments.  
 
 ### 5.2 recommendations for improving the parameter tuning process
 
 1) RTKLIB Parameter Tuning Guide:
-Key parameters such as elevation mask, satellite weighting, ambiguity resolution, and ionosphere models can be adjusted in rtk.conf (real-time) or ppk.ini (post-processing). Edit these files directly or via RTKNAVI/RTKPOST GUI for optimization.
+key parameters such as elevation mask, satellite weighting, ambiguity resolution, and ionosphere models can be adjusted in rtk.conf (real-time) or ppk.ini (post-processing). Edit these files directly or via RTKNAVI/RTKPOST GUI for optimization.
 2) Dynamic Parameter Adjustment:
-Implement adaptive mechanisms to adjust parameters during runtime, such as: adjusting elevation mask based on satellite geometry, and dynamically tuning process noise based on user motion or environmental conditions.
+implement adaptive mechanisms to adjust parameters during runtime, such as: adjusting elevation mask based on satellite geometry, and dynamically tuning process noise based on user motion or environmental conditions.
 3) Predefined Parameter Sets:
-Provide default parameter sets for common use cases, such as: static surveying, real-time UAV navigation, and long baseline RTK.
+provide default parameter sets for common use cases, such as: static surveying, real-time UAV navigation, and long baseline RTK.
 4) Benchmarking Dataset:
-Provide sample datasets for different scenarios (e.g., open sky, urban canyon) so users can test parameter configurations.
+provide sample datasets for different scenarios (e.g., open sky, urban canyon) so users can test parameter configurations.
 5) Automated Testing Framework:
-Develop an automated testing suite to validate parameter changes and their impact on positioning accuracy.
+develop an automated testing suite to validate parameter changes and their impact on positioning accuracy.
