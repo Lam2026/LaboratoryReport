@@ -285,9 +285,96 @@ In this section, we test another open-source GNSS library [GICI-LIB](https://git
 GICI-LIB uses *.yaml* file to configure the workflow, the used configuration file is attached in [*gici/post_estimation_rinex_urban.yaml*](./gici/post_estimation_rinex_urban.yaml). Notably, we use all provided navigation data files as the input, and use three estimators to estimate the positions in parallel.
 
 ### 4.2. Results
+Three typical GNSS algorithms: Single Point Positioning (SPP), Real-Time Differential (RTD), Real-Time Kinematic (RTK) are tested in this section. Although Precise Point Positioning (PPP) is implemented in GICI-LIB, it cann't be applied to process the UrbanNav dataset since there are no State-Space-Representation (SSR) data.
 
+The pathes estimated by these testing algorithms are shown as follows:
+<center>
+        <img style="border-radius: 0.3em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+        src="gici/spp_gici_urban_medium_solution.jpg">
+        <br>
+        <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;">The estimated path from GICI-SPP.</div>
+</center>
+<center>
+        <img style="border-radius: 0.3em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+        src="gici/dgnss_gici_urban_medium_solution.jpg">
+        <br>
+        <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;">The estimated path from GICI-RTD.</div>
+</center>
+<center>
+        <img style="border-radius: 0.3em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+        src="gici/rtk_gici_urban_medium_solution.jpg">
+        <br>
+        <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;">The estimated path from GICI-RTK.</div>
+</center>
+
+After obtaining the estimated results, we convert the longitude, latitude, and height into the ENU coordinates under the local reference frame. Then we compare the performances of these three algorithms using RMSE under the ENU frame, the results are shown in following table:
+| Metrics | GICI-SPP       | GICI-RTD | GICI-RTK          |
+|:-------:|:--------------:|:-------------:|:--------------:|
+|N-RMSE (m) |   14.24     | 10.01    | 8.47       |
+|E-RMSE (m) |   9.57     | 7.09    | 6.03       |
+|U-RMSE (m) |   34.47      | 20.22    | 18.69       |
+
+Obviously, the accuracy of GICI-RTK is better than that of other two algorithms. 
 
 ### 4.3. GICI-LIB vs. RTKLIB
+To fairly compare the RTK performance between GICI-LIB and RTKLIB, we use all available navigation data as input for RTKLIB-RTK as well. The RTKLIB-RTK configurations are shown below:
+
+<center>
+        <img style="border-radius: 0.3em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+        src="gici/file_load.PNG">
+        <br>
+        <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;">File load demonstration.</div>
+</center>
+<center>
+        <img style="border-radius: 0.3em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+        src="gici/settings.PNG">
+        <br>
+        <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;">Settings.</div>
+</center>
+
+The path estimated by RTKLIB-RTK can be seen in the floowing figure:
+
+<center>
+        <img style="border-radius: 0.3em;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+        src="gici/rtk_rtklib_urban_medium_solution.jpg">
+        <br>
+        <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;">The estimated path from RTKLIB-RTK.</div>
+</center>
+
+The positioning accuracies of GICI-LIB-RTK and RTKLIB-RTK are summaried as follows:
+| Metrics | GICI-RTK        | RTKLIB-RTK |
+|:-------:|:--------------:|:-------------:|
+|N-RMSE (m) |   8.47     | 6.14    |
+|E-RMSE (m) |   6.03     | 4.44    |
+|U-RMSE (m) |   18.69       | 23.94    |
+
+As shown in the table above, RTKLIB-RTK achieves lower positioning errors in N-RMSE and E-RMSE, while its U-RMSE is worse than that of GICI-RTK.
+
+Except for accuracy, GICI-LIB is actually harder to use than RTKLIB because RTKLIB provides a GUI tool, while GICI-LIB can only be used through configuration files, only the correct configuration format can make GICI-LIB work properly. Therefore, RTKLIB is more straightforward and user-friendly for novices. Additionally, since RTKLIB and GICI-LIB run on Windows and Linux respectively, their computational efficiency is not compared.
 
 ## 5. Suggestions for Improvement
 ### 5.1 recommendations for improving RTKLIB Library
